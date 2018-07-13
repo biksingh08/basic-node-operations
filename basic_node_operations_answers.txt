@@ -1,0 +1,31 @@
+1) Run the commands sort, wc and uniq on the commands.js file. Explain how they work and what the output was.
+
+A: `sort` command returns the file sorted alphabetically by line. It will look at first letter of the code starting from left
+in each line and sort it in that manner. The output for `sort` was as expected, it sorted the code lines alphabetically
+from top to bottom. The `wc` command returned count of lines, words and characters including the new line. The output
+for command js file was 40-lines 113-words 1055 characters. The `uniq` command returns sorted file alphabetically
+similarly to sort but it will remove duplicate lines as it compares previous line to the current from top to bottom.
+
+2) Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the
+specific data was outputted.
+
+A: I did `cat commands.js | wc`. Output to the screen was that the commands.js file wasn't shown on the command line. Since
+I added `|` and `wc` command, the output from `cat` command was input for `wc` command. So, the resulting output showed
+40-lines 153-words and 1055 characters.
+
+6) In this checkpoint, you encountered built-in JavaScript methods as well as the new ES6 syntax. Review the information below
+before attempting the programming challenge.
+
+Given a string, reverse the order of characters in each word within a sentence while maintaining the original word order and
+whitespace and return the string. To improve your problem-solving experience, use the suggested functions to solve the problem.
+
+A:
+
+function reverseString(inputString){
+  var splitString = inputString.split(" ");
+  var result = [];
+  splitString.forEach((word) => {
+   result.push(word.split("").reverse().join(""));
+  });
+ return result;
+}
